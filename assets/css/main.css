@@ -2101,6 +2101,8 @@ input, select, textarea {
 		.image img {
 			border-radius: 3px;
 			display: block;
+			width: 100%;
+			height: auto;
 		}
 
 		.image.left {
