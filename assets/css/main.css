@@ -3577,7 +3577,7 @@ input, select, textarea {
 	position: relative;
 	text-align: center;
 	background-color: #2e3842;
-	background-image: url('images/banner-blur.avif');
+	background-image: url('/images/banner-blur.avif');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -3587,7 +3587,7 @@ input, select, textarea {
 
 /* Wenn Bild geladen -> Blur entfernen */
 #banner.loaded {
-	background-image: url('images/banner.avif');
+	background-image: url('/images/banner.avif');
 	filter: blur(0);
 }
 
@@ -3678,7 +3678,7 @@ input, select, textarea {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(46, 56, 66, 0.5);
+	background: rgba(18, 22, 26, 0.5);
 	z-index: 1;
 	pointer-events: none;
 }
