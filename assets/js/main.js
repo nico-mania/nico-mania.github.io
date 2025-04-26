@@ -102,11 +102,9 @@
 	var img = new Image();
 	img.src = 'images/banner.avif';
 	img.onload = function () {
-		console.log('Bild wurde geladen');
 		banner.classList.remove('loading');
 		banner.classList.add('loaded');
 	};
 	img.onerror = function () {
-		console.error('Fehler beim Laden des Banners!');
 	};
 })(jQuery);
