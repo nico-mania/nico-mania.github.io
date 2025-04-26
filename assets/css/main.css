@@ -3565,146 +3565,123 @@ input, select, textarea {
 
 /* Banner */
 
-	#banner {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
-		justify-content: center;
-		cursor: default;
-		height: 100vh;
-		min-height: 35em;
-		overflow: hidden;
-		position: relative;
-		text-align: center;
-	}
+#banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: default;
+	height: 100vh;
+	min-height: 35em;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	background-color: #2e3842;
+	background-image: url('images/banner-blur.avif');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: background-image 0.5s ease, filter 0.5s ease;
+	filter: blur(10px);
+}
 
-	#banner h2 {
-		-moz-transform: scale(1);
-		-webkit-transform: scale(1);
-		-ms-transform: scale(1);
-		transform: scale(1);
-		-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
-		-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
-		-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-		transition: transform 0.5s ease, opacity 0.5s ease;
-		display: inline-block;
-		font-size: 1.75em;
-		opacity: 1;
-		padding: 0.35em 1em;
-		position: relative;
-		z-index: 1;
-	}
-	
-	#banner h2:before, #banner h2:after {
-		-moz-transition: width 0.6s ease;
-		-webkit-transition: width 0.6s ease;
-		-ms-transition: width 0.6s ease;
-		transition: width 0.6s ease;
-		-moz-transition-delay: 0.1s;
-		-webkit-transition-delay: 0.1s;
-		-ms-transition-delay: 0.1s;
-		transition-delay: 0.1s;
-		background: #fff;
-		content: '';
-		display: block;
-		height: 2px;
-		position: absolute;
-		width: 100%;
-	}
-	
-	#banner h2:before {
-		top: 0;
-		left: 0;
-	}
-	
-	#banner h2:after {
-		bottom: 0;
-		right: 0;
-	}
-	
-	#banner p {
-		letter-spacing: 0.225em;
-		text-transform: uppercase;
-	}
-	
-	#banner p a {
-		color: inherit;
-	}
-	
-	#banner .more {
-		-moz-transition: -moz-transform 0.6s ease, opacity 0.6s ease;
-		-webkit-transition: -webkit-transform 0.6s ease, opacity 0.6s ease;
-		-ms-transition: -ms-transform 0.6s ease, opacity 0.6s ease;
-		transition: transform 0.6s ease, opacity 0.6s ease;
-		-moz-transition-delay: 0.6s;
-		-webkit-transition-delay: 0.6s;
-		-ms-transition-delay: 0.6s;
-		transition-delay: 0.6s;
-		-moz-transform: translateY(0);
-		-webkit-transform: translateY(0);
-		-ms-transform: translateY(0);
-		transform: translateY(0);
-		border: none;
-		bottom: 0;
-		color: inherit;
-		font-size: 0.8em;
-		height: 8.5em;
-		left: 50%;
-		letter-spacing: 0.225em;
-		margin-left: -8.5em;
-		opacity: 1;
-		outline: 0;
-		padding-left: 0.225em;
-		position: absolute;
-		text-align: center;
-		text-transform: uppercase;
-		width: 16em;
-		z-index: 1;
-	}
-	
-	#banner .more:after {
-		background-image: url("images/arrow.svg");
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		bottom: 4em;
-		content: '';
-		display: block;
-		height: 1.5em;
-		left: 50%;
-		margin: 0 0 0 -0.75em;
-		position: absolute;
-		width: 1.5em;
-	}
-	
-	#banner:after {
-		pointer-events: none;
-		-moz-transition: opacity 0.5s ease-in-out;
-		-webkit-transition: opacity 0.5s ease-in-out;
-		-ms-transition: opacity 0.5s ease-in-out;
-		transition: opacity 0.5s ease-in-out;
-		-moz-transition-delay: 0s;
-		-webkit-transition-delay: 0s;
-		-ms-transition-delay: 0s;
-		transition-delay: 0s;
-		content: '';
-		background: #2e3842;
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		opacity: 0;
-	}
+/* Wenn Bild geladen -> Blur entfernen */
+#banner.loaded {
+	background-image: url('images/banner.avif');
+	filter: blur(0);
+}
+
+#banner h2, #banner p, #banner .more {
+	position: relative;
+	z-index: 2;
+}
+
+#banner h2 {
+	transform: scale(1);
+	transition: transform 0.5s ease, opacity 0.5s ease;
+	display: inline-block;
+	font-size: 1.75em;
+	opacity: 1;
+	padding: 0.35em 1em;
+}
+
+#banner h2:before, #banner h2:after {
+	transition: width 0.6s ease;
+	transition-delay: 0.1s;
+	background: #fff;
+	content: '';
+	display: block;
+	height: 2px;
+	position: absolute;
+	width: 100%;
+}
+
+#banner h2:before {
+	top: 0;
+	left: 0;
+}
+
+#banner h2:after {
+	bottom: 0;
+	right: 0;
+}
+
+#banner p {
+	letter-spacing: 0.225em;
+	text-transform: uppercase;
+}
+
+#banner p a {
+	color: inherit;
+}
+
+#banner .more {
+	transition: transform 0.6s ease, opacity 0.6s ease;
+	transform: translateY(0);
+	border: none;
+	bottom: 0;
+	color: inherit;
+	font-size: 0.8em;
+	height: 8.5em;
+	left: 50%;
+	letter-spacing: 0.225em;
+	margin-left: -8.5em;
+	opacity: 1;
+	outline: 0;
+	padding-left: 0.225em;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	width: 16em;
+}
+
+#banner .more:after {
+	background-image: url("images/arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom: 4em;
+	content: '';
+	display: block;
+	height: 1.5em;
+	left: 50%;
+	margin: 0 0 0 -0.75em;
+	position: absolute;
+	width: 1.5em;
+}
+
+/* Dunkler Overlay */
+#banner:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(46, 56, 66, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
 	
 
 
